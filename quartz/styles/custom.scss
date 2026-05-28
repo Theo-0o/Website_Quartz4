@@ -1,3 +1,596 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+/* ── Force light mode ── */
+:root {
+  color-scheme: light;
+}
+
+/* ── Fonts ── */
+@font-face {
+  font-family: 'UncutPlan8';
+  src: url('/static/fonts/UncutPlan8-Regular.otf') format('opentype');
+}
+
+/* ── Global ── */
+body {
+  background-color: #EBEBEB !important;
+  font-family: 'UncutPlan8', monospace !important;
+  color: #000000 !important;
+  font-size: 0.8rem !important;
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'UncutPlan8', monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: normal !important;
+  color: #000000 !important;
+}
+
+/* ── No border radius anywhere ── */
+* {
+  border-radius: 0 !important;
+}
+
+/* ── Site title ── */
+.page-title a {
+  display: block !important;
+  margin-top: 1rem !important;
+  color: #000000 !important;
+  font-weight: normal !important;
+}
+
+/* ── Layout: 50/50 grid ── */
+#quartz-body {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.center {
+  padding: 0 0.1rem 0.1rem 0.1rem !important;
+  box-sizing: border-box !important;
+}
+
+.sidebar.left {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0px 0.7rem 0.7rem !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  overflow: visible !important;
+  box-shadow: 1px 0 0 0 #000 !important;
+  border-right: none !important;
+}
+
+.page-header {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+}
+
+/* ── Side panel ── */
+#side-panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 33.333vw;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid #000;
+  z-index: 999;
+}
+
+body.panel-open #side-panel {
+  display: block;
+}
+
+body.panel-open #quartz-body {
+  width: 66.666vw;
+}
+
+#panel-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── Footer ── */
+footer,
+.page-footer,
+footer.page-footer {
+  margin-top: auto !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: 0 !important;
+  font-size: 0.8rem !important;
+  line-height: 1 !important;
+}
+
+/* ── Explorer: always open, no toggle button, no arrows ── */
+button.explorer-toggle {
+  display: none !important;
+}
+.explorer-content {
+  display: block !important;
+}
+
+.explorer,
+.explorer-content,
+.explorer-ul {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  overflow: visible !important;
+}
+
+ul.content {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.explorer {
+  margin-top: -21px !important;
+}
+
+svg.folder-icon,
+svg.fold {
+  display: none !important;
+}
+
+li.overflow-end {
+  display: none !important;
+}
+
+/* Indent folder children */
+.folder-outer {
+  padding-left: 0.5rem !important;
+}
+
+/* Explorer link styles */
+ul.explorer-ul a,
+ul.explorer-ul li,
+.folder-container div > a,
+.folder-container div > button span {
+  font-family: 'UncutPlan8', monospace !important;
+  font-size: 0.8rem !important;
+  color: #000000 !important;
+  background: none !important;
+  text-decoration: none !important;
+  color: #000000 !important;
+  background: none !important;
+  font-weight: normal !important;
+}
+
+ul.explorer-ul a.active,
+.explorer-content a.active {
+  color: #000000 !important;
+  background: none !important;
+  font-weight: normal !important;
+}
+
+.explorer-content a,
+ul.explorer-ul a,
+.folder-container div > a {
+  opacity: 1 !important;
+}
+
+.folder-container button {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+}
+
+/* ── Hide specific pages from explorer ── */
+ul.explorer-ul li:has(a[href$="soft_rotation_canvas"]),
+ul.explorer-ul li:has(a[href$="process_pics"]),
+ul.explorer-ul li:has(a[href$="the_closest_approach_photos"]),
+ul.explorer-ul li:has(a[href$="soft_rotation_canv"]) {
+  display: none !important;
+}
+
+/* ── Internal links ── */
+.internal {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #0000FF !important;
+}
+
+/* ── Images & media ── */
+img,
+article img,
+.popover img {
+  margin: 0 0 0rem 0 !important;
+}
+
+article div img {
+  margin: 0 0 0.1rem 0 !important;
+}
+
+iframe {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+/* ── Transclusions ── */
+blockquote.transclude h1 {
+  display: none !important;
+}
+
+blockquote.transclude {
+  border-left: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+a.transclude-src {
+  display: none !important;
+}
+
+/* ── Tag page layout ── */
+div.section {
+  display: grid !important;
+  grid-template-columns: fit-content(10em) 20em 1fr !important;
+  grid-template-rows: auto !important;
+  align-items: start !important;
+}
+
+div.section p.meta {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+div.section .desc {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+div.section ul.tags,
+div.section ul.tags li,
+div.section ul.tags a {
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+/* ── Hide order- tags ── */
+a.tag-link[href*="order-"],
+li:has(> a.tag-link[href*="order-"]) {
+  display: none !important;
+}
+
+/* ── Side panel ── */
+#quartz-body .sidebar.right {
+  display: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100vh !important;
+  position: sticky !important;
+  top: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 0 0.37rem 0.37rem 0.37rem !important;
+  border-left: none !important;
+  box-shadow: -1px 0 0 0 #000 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  gap: 0 !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+#quartz-body.panel-open {
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+
+#quartz-body.panel-open .sidebar.right {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+}
+
+#panel-content {
+  width: 100% !important;
+  font-family: 'UncutPlan8', monospace !important;
+  font-size: 0.8rem !important;
+  color: #000000 !important;
+}
+
+#panel-content img {
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.center,
+#quartz-body .sidebar.right,
+#quartz-body .sidebar.left {
+  scrollbar-width: none !important;
+}
+
+.center::-webkit-scrollbar,
+#quartz-body .sidebar.right::-webkit-scrollbar,
+#quartz-body .sidebar.left::-webkit-scrollbar {
+  display: none !important;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.2rem;
+  width: 100% !important;
+  margin-top: 0.8rem !important;
+}
+
+.img-grid .cell {
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  height: 100%;
+}
+
+.img-grid .cell.large {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.img-grid .cell.wide {
+  grid-column: span 2;
+  grid-row: span 1;
+  aspect-ratio: auto;
+}
+
+.img-grid .cell img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  margin: 0 !important;
+  display: block !important;
+  min-height: 100% !important;
+}
+
+li {
+  border: none !important;
+}
+
+hr {
+  display: none !important;
+}
+
+/* ── Mobile (≤800px) ── */
+@media (max-width: 800px) {
+
+  body::before {
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 2.5rem !important;
+    background: #EBEBEB !important;
+    z-index: 1000 !important;
+  }
+  
+  .sidebar.left .page-title {
+    display: none !important;
+  }
+
+  /* Show beforeBody page title on mobile */
+  .page-title {
+    position: fixed !important;
+    top: 1rem !important;
+    left: 2.5rem !important;
+    z-index: 1001 !important;
+    margin: 0 !important;
+    background: #EBEBEB !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .page-title a {
+    margin-top: 0 !important;
+  }
+
+  /* Prevent any horizontal overflow at root level */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  #quartz-body {
+    display: block !important;
+    grid-template-columns: unset !important;
+    grid-template-areas: unset !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Page title: always visible, fixed to top */
+  .sidebar.left .page-title {
+    position: fixed !important;
+    top: 0.5rem !important;
+    left: 2.5rem !important;
+    z-index: 1001 !important;
+    margin: 0 !important;
+    visibility: visible !important;
+    background: #EBEBEB !important;
+  }
+
+  .sidebar.left .page-title a {
+    margin-top: 0 !important;
+  }
+
+  /* Footer fixed to bottom, full width */
+  footer,
+  .page-footer,
+  footer.page-footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    padding: 0.5rem 0.7rem !important;
+    background: #EBEBEB !important;
+    z-index: 997 !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Left sidebar: hidden slide-in */
+  body .sidebar.left {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #EBEBEB !important;
+    z-index: 1000 !important;
+    transform: translateX(-100%) !important;
+    visibility: hidden !important;
+    transition: transform 0.3s ease, visibility 0.3s ease !important;
+    padding: 3rem 0.7rem 0.7rem 0 !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+  }
+
+  .sidebar.left .leaf-content {
+    background: #EBEBEB !important;
+  }
+
+  .explorer-content {
+    background: #EBEBEB !important;
+    padding-left: 2.5rem !important;
+    padding-top: 2.2rem !important;
+
+  }
+
+  .sidebar.left .explorer {
+    margin-top: 0 !important;
+  }
+
+  body.menu-open .sidebar.left {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+  }
+
+  /* Center content */
+  .center {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 3rem 0.7rem 5rem 0.7rem !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  article,
+  .popover-hint {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  img, iframe, video {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  p, li, a {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Tags above footer */
+  .tags {
+    position: relative !important;
+    z-index: 998 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Burger button */
+  #burger-menu {
+    display: block !important;
+    position: fixed !important;
+    top: 0.67rem !important;
+    left: 0.7rem !important;
+    z-index: 1001 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-family: 'UncutPlan8', monospace !important;
+    font-size: 1.2rem !important;
+    padding: 0 !important;
+    color: #000 !important;
+  }
+
+  /* Dim overlay when menu open */
+  body.menu-open::after {
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0,0,0,0.3) !important;
+    z-index: 999 !important;
+  }
+
+  /* Panel open: full screen */
+  #quartz-body.panel-open .center {
+    display: none !important;
+  }
+
+  #quartz-body.panel-open .sidebar.right {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 998 !important;
+    padding: 3rem 0.7rem 0.7rem 0.7rem !important;
+    overflow-y: auto !important;
+    background: #EBEBEB !important;
+    box-shadow: none !important;
+  }
+
+  /* Mobile close panel button */
+  #close-panel-mobile {
+    position: fixed !important;
+    top: 0.67rem !important;
+    right: 0.7rem !important;
+    z-index: 1001 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-family: 'UncutPlan8', monospace !important;
+    font-size: 1.2rem !important;
+    padding: 0 !important;
+    color: #000 !important;
+    display: none !important;
+  }
+
+  body.panel-active #close-panel-mobile {
+    display: block !important;
+  }
+
+}
+
+/* Hide mobile-only elements on desktop */
+@media (min-width: 801px) {
+  #burger-menu,
+  #close-panel-mobile {
+    display: none !important;
+  }
+}

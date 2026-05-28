@@ -5,64 +5,76 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.TagList(),
+  ],
   footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
-    },
+    links: {},
   }),
 }
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    Component.MobileOnly(Component.PageTitle()),
   ],
   left: [
-    Component.PageTitle(),
+    Component.DesktopOnly(Component.PageTitle()),
     Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
+    Component.Explorer({
+      useSavedState: false,
+      folderClickBehavior: "collapse",
+      sortFn: function(a, b) {
+        const tagA = a.data?.tags?.find(function(t) { return t.startsWith("order-") })
+        const tagB = b.data?.tags?.find(function(t) { return t.startsWith("order-") })
+        const ao = tagA ? parseInt(tagA.split("-")[1]) : 999
+        const bo = tagB ? parseInt(tagB.split("-")[1]) : 999
+        if (ao !== bo) return ao - bo
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        if (!a.isFolder && b.isFolder) return 1
+        return -1
+      },
     }),
-    Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.SidePanel(),
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
-    Component.Explorer(),
+  beforeBody: [
+    Component.MobileOnly(Component.PageTitle()),
   ],
-  right: [],
+  left: [
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Explorer({
+      useSavedState: false,
+      folderClickBehavior: "collapse",
+      sortFn: function(a, b) {
+        const tagA = a.data?.tags?.find(function(t) { return t.startsWith("order-") })
+        const tagB = b.data?.tags?.find(function(t) { return t.startsWith("order-") })
+        const ao = tagA ? parseInt(tagA.split("-")[1]) : 999
+        const bo = tagB ? parseInt(tagB.split("-")[1]) : 999
+        if (ao !== bo) return ao - bo
+        if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        if (!a.isFolder && b.isFolder) return 1
+        return -1
+      },
+    }),
+  ],
+  right: [
+    Component.SidePanel(),
+  ],
 }
