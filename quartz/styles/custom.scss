@@ -191,6 +191,7 @@ ul.explorer-ul a,
 /* ── Hide specific pages from explorer ── */
 ul.explorer-ul li:has(a[href$="soft_rotation_canvas"]),
 ul.explorer-ul li:has(a[href$="process_pics"]),
+ul.explorer-ul li:has(a[href$="not_yet_sound_photos"]),
 ul.explorer-ul li:has(a[href$="the_closest_approach_photos"]),
 ul.explorer-ul li:has(a[href$="soft_rotation_canv"]) {
   display: none !important;
