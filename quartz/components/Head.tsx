@@ -36,6 +36,17 @@ export default (() => {
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
 
+    // Only emit the Person schema on the homepage — avoids repeating identical
+    // structured data across every page on the site.
+    const isHomepage = fileData.slug === ("index" as FullSlug)
+    const personJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Christopher Theophanous",
+      alternateName: "Christopher (Theo) Theophanous",
+      url: `https://${cfg.baseUrl}`,
+    }
+
     return (
       <head>
         <title>{title}</title>
@@ -85,6 +96,13 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+
+        {isHomepage && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          />
+        )}
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
