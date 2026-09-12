@@ -5,7 +5,7 @@ tags:
 ---
 <div style="display:grid; grid-template-columns: 160px 1fr; column-gap: 2rem; margin-top: 0.6rem; line-height: 2;">
 
-<div><strong></strong></div>
+<div></div>
 <div></div>
 
 <div>*1996</div>
@@ -19,7 +19,6 @@ Research assistant<br>
 exMedia Lab, Academy of Media Arts
 </div>
 
-
 <div>2024–2026</div>
 <div>
 Student assistant<br>
@@ -27,14 +26,13 @@ exMedia Lab, Academy of Media Arts
 </div>
 
 <div style="margin-top:1rem;">Education</div>
-<div></div>
+<div><br></div>
 
 <div>2022–2026</div>
 <div>
-Academy of Media Arts, Cologne,  DE<br>
+Academy of Media Arts, Cologne, DE<br>
 Diploma with honors
 </div>
-
 
 <div>2016–2021</div>
 <div>
@@ -42,14 +40,14 @@ University of Applied Sciences, Mainz, DE<br>
 Bachelor (Communication Design)
 </div>
 
-
 <div style="margin-top:1rem;">Collaboration</div>
-<div></div>
+<div><br></div>
 
 <div>2023–now</div>
 <div>
 <a href="/soft-rotation">soft rotation</a><br>
-concert series for experimental music and performance
+concert series for experimental music<br>
+and performance
 </div>
 
 <div>2025</div>
@@ -57,13 +55,12 @@ concert series for experimental music and performance
 Moers Festival<br>
 </div>
 
-
 <div style="margin-top:1rem;">Appearances</div>
-<div></div>
+<div><br></div>
 
 <div>2026</div>
 <div>
-KHM, Köln, DE<br>
+KHM, Cologne, DE<br>
 <a href="/not-yet-sound">Diploma show</a><br>
 Installation
 </div>
@@ -77,25 +74,32 @@ sound performance
 
 <div>2023</div>
 <div>
-Kunstverein MMIII, Moenchengladbach, DE<br>
-sound performance<br><br>
 soft rotation #0, Cologne, DE<br>
-sound performance<br><br>
+sound performance
+</div>
+
+<div>2023</div>
+<div>
 Hofkonzerte KHM, Cologne, DE<br>
-sound performance<br><br>
+sound performance
+</div>
+
+<div>2023</div>
+<div>
+Kunstverein MMIII, Moenchengladbach, DE<br>
+sound performance
 </div>
 
 <div>2022</div>
 <div>
 Karstadt-Pavillon, Mainz, DE<br>
-<a href="/when-youre-feeling-distant-from-the-closest-approach">When you’re feeling distant from the closest approach</a><br>
+<a href="/when-youre-feeling-distant-from-the-closest-approach">When you're feeling distant from the closest approach</a><br>
 Exhibition w/ artist collective forum furore<br>
 (Christopher Theophanous, Anna Janke, Milan Gress)
 </div>
 
-
 <div style="margin-top:1rem;">Residency</div>
-<div></div>
+<div><br></div>
 
 <div>2024</div>
 <div>
@@ -103,9 +107,8 @@ Nida Art Colony, Nida, LT<br>
 Small Realities – Reconstructing Reality
 </div>
 
-
 <div style="margin-top:1rem;">Workshops</div>
-<div></div>
+<div><br></div>
 
 <div>2025</div>
 <div>
@@ -126,8 +129,6 @@ Material research workshop
 </div>
 
 </div>
-
-
 <br>
 <br>
 
