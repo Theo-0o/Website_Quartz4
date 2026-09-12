@@ -61,6 +61,13 @@ Moers Festival<br>
 <div style="margin-top:1rem;">Appearances</div>
 <div></div>
 
+<div>2026</div>
+<div>
+KHM, Köln, DE<br>
+<a href="/not-yet-sound">Diploma show</a><br>
+Installation
+</div>
+
 <div>2024</div>
 <div>
 ZKM, Karlsruhe, DE<br>
