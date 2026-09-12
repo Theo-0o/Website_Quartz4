@@ -2,8 +2,11 @@
 	"nodes":[
 		{"id":"fd03aec041cd185f","type":"file","file":"files/06_soft_rotation/credit_christopher_theophanous_soft_rotation_poster_web_optimized.jpg","x":-260,"y":-852,"width":269,"height":380},
 		{"id":"b3b1b096d265d530","type":"file","file":"files/06_soft_rotation/img_1252_copy2.png","x":-211,"y":-1270,"width":362,"height":486},
-		{"id":"ad667d1dc1bd9ec4","type":"file","file":"files/06_soft_rotation/banner_red.png","x":-161,"y":-544,"width":261,"height":147},
-		{"id":"18706469eab5f7cd","type":"file","file":"files/06_soft_rotation/soft_rotation-promo.png","x":-386,"y":-1380,"width":395,"height":286}
+		{"id":"18706469eab5f7cd","type":"file","file":"files/06_soft_rotation/soft_rotation-promo.png","x":-386,"y":-1393,"width":395,"height":286},
+		{"id":"ad667d1dc1bd9ec4","type":"file","file":"files/06_soft_rotation/banner_red.png","x":-125,"y":-545,"width":261,"height":147},
+		{"id":"bf585a24ed098e30","type":"file","file":"files/06_soft_rotation/Poster_Stadt.jpg","x":-272,"y":-120,"width":360,"height":540},
+		{"id":"2dd498bb263283dc","type":"file","file":"files/06_soft_rotation/soft_rotation_12.png","x":-300,"y":-520,"width":388,"height":517},
+		{"id":"b057be79871d7d05","type":"file","file":"files/06_soft_rotation/poster_a3.jpg","x":-300,"y":360,"width":283,"height":400}
 	],
 	"edges":[]
 }
